@@ -7,6 +7,7 @@ import Navbar from '@/components/navigation/navbar'
 import { getDictionary } from '@/lib/get-dictionary'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import DictionaryProvider from '@/components/providers/dictionary-provider'
+import BottomNav from '@/components/navigation/bottom-nav'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -32,11 +33,11 @@ export default async function RootLayout({
             <DictionaryProvider dictionary={dictionary}>
 
               <Navbar dictionary={dictionary} />
-              <main className='container'>
+              <main className='container h-screen'>
                 {children}
               </main>
+              <BottomNav className='md:hidden'/>
             </DictionaryProvider>
-
           </ThemeProvider>
         </ClientCookiesProvider>
       </body>

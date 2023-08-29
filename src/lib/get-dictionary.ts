@@ -5,6 +5,7 @@ export interface Dictionary{
     siteDescription: string;
     themes: string[];
     profile:string;
+    routes:string[]
 }
 // Function to dynamically import a dictionary based on locale
 const importDictionary = async (locale: string) => {

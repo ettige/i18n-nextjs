@@ -1,11 +1,14 @@
 {
-    "siteName":"ShipShop",
-    "siteDescription":"online",
-    "themes":[
+    "siteName": "ShipShop",
+    "siteDescription": "online",
+    "themes": [
         "Light",
         "Dark",
         "System"
     ],
-    "profile":"Profile"
-    
+    "profile": "Profile",
+    "routes": [
+        "Home",
+        "Settings"
+    ]
 }
