@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import MainNav from "@/components/navigation/main-nav";
 import SideBar from "./side-bar";
+import SignOut from "../signout";
 
 const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
 
@@ -38,6 +39,9 @@ const Navbar = ({ dictionary }: { dictionary: Dictionary }) => {
                         <DropdownMenuContent align="end">
                             <DropdownMenuItem className="justify-end">
                                 {dictionary.profile}
+                            </DropdownMenuItem>
+                            <DropdownMenuItem className="justify-end">
+                                <SignOut />
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
