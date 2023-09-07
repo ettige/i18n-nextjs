@@ -2,16 +2,6 @@
 
 import React, { createContext, useContext } from "react"
 
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog"
-
-
 interface ModalContextProps {
     open: boolean,
     onClose: () => void,
@@ -21,9 +11,9 @@ interface ModalContextProps {
     children?: React.ReactNode
 }
 
-const ModalContext = createContext<ModalContextProps>({ open: false, onClose: () => { }, onOpen: () => { } })
+ const ModalContext = createContext<ModalContextProps>({ open: false, onClose: () => { }, onOpen: () => { } })
 
-const ModalProvider = ({ children }: { children: React.ReactNode }) => {
+ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
     const [isOpen, setIsOpen] = React.useState<boolean>(false)
 
     return (
@@ -36,6 +26,9 @@ const ModalProvider = ({ children }: { children: React.ReactNode }) => {
 
 export const useModal = () => {
     const modal = useContext(ModalContext)
+    if(!modal){
+        console.error("Fail To initilize ModalProvider!!!")
+    }
 
     return modal
 }
